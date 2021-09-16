@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Pelicula } from 'src/app/models/Pelicula';
 import { PeliculasService } from '../peliculas.service';
 
+
 @Component({
   selector: 'app-peliculas-listado',
   templateUrl: './peliculas-listado.component.html',
@@ -10,7 +11,10 @@ import { PeliculasService } from '../peliculas.service';
 export class PeliculasListadoComponent implements OnInit {
 
   lstPelis:any;
-  texto:string = "Mi titulo de peli ";
+  texto:string = "Título ";
+  productora:string="Productora";
+  fecha:string="fecha";
+  picture:string="attach";
   edtiMode = false;
   peli2edit:Pelicula = {titulo: "", generos:[], productora: ""};
 
@@ -35,8 +39,10 @@ export class PeliculasListadoComponent implements OnInit {
   insertPelicula() {
     var peli = {
       titulo: this.texto,
-      generos: [],
-      productora: ""
+      generos:["PIM PAM","PAM PIM"],
+      productora: this.productora,
+      fecha:this.fecha,
+      picture:this.picture
     }
 
     this.peli2edit = peli;

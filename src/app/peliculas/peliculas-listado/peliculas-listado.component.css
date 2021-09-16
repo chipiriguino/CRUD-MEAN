@@ -1,0 +1,63 @@
+.button {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  border: 0;
+}
+.create-button {
+    background-image: url(https://www.kindpng.com/picc/m/235-2351470_minus-button-icon-png-create-a-profile-icon.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+
+.edit {
+  background-color: cyan;
+  background-image: url(https://www.shareicon.net/data/512x512/2015/08/12/83925_edit_512x512.png);
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: center;
+  margin-right: 10px;
+}
+
+.delete {
+
+  background-image: url(https://www.pngarts.com/files/4/Delete-Button-Free-PNG-Image.png);
+  background-repeat: no-repeat;
+  background-size: 110%;
+  background-position: center;
+}
+.container-new {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.input-new {
+  max-width: 25%;
+}
+.container-buttons {
+  display: flex;
+  flex-direction: row;
+ justify-content: flex-end;
+}
+
+.container-list {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px;
+  margin-bottom: 20px;
+}
+
+.container-pelis {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 30px 60px;
+}
+.card-container{
+    background-color: pink;
+    color: white;
+    border-radius: 5%;
+   
+}

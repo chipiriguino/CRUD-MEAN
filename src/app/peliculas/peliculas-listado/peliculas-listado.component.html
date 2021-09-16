@@ -1,22 +1,35 @@
 
 <div *ngIf="!edtiMode">
-    <input type="button" (click)="insertPelicula()" value="Crea nueva peli">
-
-    <input type="text" [(ngModel)]="texto">
-    <p> El texto es --> {{ texto }} </p>
+    <div class="container-new">
+        
+   <label for="Name">Name</label> <input class="input-new" type="text" [(ngModel)]="texto">
+   <label for="Productora">Productora</label> <input class="input-new" type="text" [(ngModel)]="productora">
+   <label for="Fecha">Fecha</label> <input class="input-new" type="text" [(ngModel)]="fecha">
+    <input class="button create-button" type="button" (click)="insertPelicula()">
+</div>
+    <!-- <p> El texto es  {{ texto }} </p> -->
     <hr>
 
-
-    <div *ngFor="let item of lstPelis | async;">
-        <p>Id: {{ item._id }}</p>
+<div id="container" class="container-pelis">
+    <div class="container-list" *ngFor="let item of lstPelis | async;">
+        <!-- <p>Id: {{ item._id }}</p> -->
+        <div class="card-container">
+        <img src="https://fondosmil.com/fondo/48687.jpg" width="250" height="250"/>
         <p>Nombre: {{ item.titulo }}</p>
         <p>Generos: {{ item.generos | json }}</p>
         <p>Productora: {{ item.productora }}</p>
-        <input type="button" value="Editar" (click)="edit(item._id)">
-        <input type="button" value="Eliminar" (click)="delete(item._id)">
+        <p>Fecha: {{ item.fecha}}</p>
+       
+    </div>
+    <div class="container-buttons">
+        <input class="button edit" type="button"  (click)="edit(item._id)">
+        <input class="button delete" type="button"  (click)="delete(item._id)">
+    </div>
         <hr>
     </div>
 </div>
+</div>
+
 
 <div *ngIf="edtiMode">
     <p>
