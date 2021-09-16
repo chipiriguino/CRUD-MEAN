@@ -1,0 +1,33 @@
+
+<div *ngIf="!edtiMode">
+    <input type="button" (click)="insertPelicula()" value="Crea nueva peli">
+
+    <input type="text" [(ngModel)]="texto">
+    <p> El texto es --> {{ texto }} </p>
+    <hr>
+
+
+    <div *ngFor="let item of lstPelis | async;">
+        <p>Id: {{ item._id }}</p>
+        <p>Nombre: {{ item.titulo }}</p>
+        <p>Generos: {{ item.generos | json }}</p>
+        <p>Productora: {{ item.productora }}</p>
+        <input type="button" value="Editar" (click)="edit(item._id)">
+        <input type="button" value="Eliminar" (click)="delete(item._id)">
+        <hr>
+    </div>
+</div>
+
+<div *ngIf="edtiMode">
+    <p>
+        <label for="titulo">Título: </label>
+        <input type="text" id="titulo" [(ngModel)]="peli2edit.titulo">
+    </p>
+    <p>
+        <label for="productora">Productora: </label>
+        <input type="text" id="productora" [(ngModel)]="peli2edit.productora">
+    </p>
+
+    <input type="button" value="Cancelar" (click)="cancelEdit()">
+    <input type="button" value="Guardar" (click)="save()">
+</div>
